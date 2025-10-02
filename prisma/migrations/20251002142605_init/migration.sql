@@ -1,11 +1,13 @@
 -- CreateTable
 CREATE TABLE "EnrollmentGoal" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "category" TEXT NOT NULL,
     "target" INTEGER NOT NULL DEFAULT 0,
     "achieved" INTEGER NOT NULL DEFAULT 0,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "EnrollmentGoal_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

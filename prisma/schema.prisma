@@ -1,13 +1,8 @@
-generator client {
-provider = "prisma-client-js"
-output   = "../app/generated/prisma"
-}
-
 datasource db {
-provider = "sqlite"
-url      = "file:./db.sqlite"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
-
+ 
 // Modelo para armazenar os objetivos de matrícula por categoria (ex: "Maternal manhã")
 model EnrollmentGoal {
 id        Int      @id @default(autoincrement())
