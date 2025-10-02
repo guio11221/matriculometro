@@ -2,7 +2,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
- 
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
 // Modelo para armazenar os objetivos de matrícula por categoria (ex: "Maternal manhã")
 model EnrollmentGoal {
 id        Int      @id @default(autoincrement())
